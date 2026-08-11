@@ -373,7 +373,26 @@ export const rooms: Room[] = [
         room: 6,
         title: 'The Letter 💌',
         description:
-          'Dear Spoorthy,\n\nThree years ago I met you at Mercedes. I had no idea that an ordinary first day at a company would become the beginning of one of the most beautiful friendships of my life.\n\nWe have shared laughter, quiet moments, and memories that feel like a private memory universe made only for us. You have become someone I trust, admire, and love as a friend more than I ever expected.\n\nThank you for being you, for every conversation, every late-night message, and every moment we turned into a memory. This is for the quiet way you make the world feel warmer and more meaningful.\n\nLove,\nNirali',
+          `Dear Spoorthy,\n
+
+Three years ago, I met you at Mercedes. I had no idea that an ordinary first day at a company would quietly become the beginning of one of the most beautiful friendships of my life.
+
+Somewhere between the conversations, the laughter, the random little moments, and the countless memories we made, you became a part of my universe. A tiny constellation of moments that somehow makes sense when I look at them together - all the silly ones, the quiet ones, and the ones I wish I could relive forever.
+
+We have shared laughter, quiet moments, chaos, comfort, and memories that feel like a little universe made just for us. You became someone I trust, admire, and love in a way I never expected when we first met.
+
+Thank you for being you. For every conversation, every late-night message, every laugh, every little adventure, and every ordinary moment that somehow became extraordinary just because it was ours.
+
+If our friendship were a universe, I think I'd never want to stop exploring it, because somehow, there always seems to be another memory waiting to be made, another story waiting to unfold, another little star waiting to find its place.
+
+So here's to everything we've been, everything we are, and everything that's still waiting for us somewhere among the stars.
+
+Some friendships are found.
+
+Ours feels a little more like it was written in the stars. ✨
+
+Love,
+Nirali`,
       },
     ],
   },

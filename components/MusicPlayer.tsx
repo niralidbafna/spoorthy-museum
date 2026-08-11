@@ -35,12 +35,12 @@ export function MusicPlayer() {
         type="button"
         onClick={togglePlayback}
         aria-label={buttonLabel}
-        className="inline-flex h-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-none border border-muted/20 bg-surface-2 text-dark transition hover:bg-accent/10 focus:outline-offset-4 focus:outline-2 focus:outline-dark"
+        className="inline-flex h-11 min-h-[42px] min-w-[42px] items-center justify-center rounded-none border border-muted/20 bg-surface-2 text-dark transition hover:bg-accent/10 focus:outline-offset-4 focus:outline-2 focus:outline-dark"
       >
-        {isPlaying ? 'Pause' : 'Play'}
+        {isPlaying ? '⏸️' : '▶️'}
       </button>
       <p className="text-xs uppercase tracking-[0.24em] text-muted">Music</p>
-      <audio ref={audioRef} src="/audio/youre-my-sunshine.mp3" preload="none" />
+      <audio ref={audioRef} src="/audio/yellow.mp3" preload="none" />
     </div>
   );
 }
