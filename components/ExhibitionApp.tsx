@@ -62,7 +62,7 @@ export default function ExhibitionApp() {
                 <span className="text-sm transition-transform duration-200 group-hover:-translate-x-1">
                     ←
                 </span>
-                <span>Return to our universe</span>
+                <span>Return to our universe ✨</span>
                 </button>
             </div>
 
@@ -75,11 +75,11 @@ export default function ExhibitionApp() {
 
                 <div className="max-w-2xl">
                 <p className="text-xs uppercase tracking-[0.32em] text-muted">
-                    OUR LITTLE UNIVERSE
+                    OUR LITTLE UNIVERSE 🌍
                 </p>
 
-                <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
-                    SPOORTHY × NIRALI
+                <h1 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">
+                    SPOORTHY × NIRALI 💫
                 </h1>
 
                 <p className="mt-4 max-w-xl text-base leading-8 text-muted">
@@ -102,19 +102,19 @@ export default function ExhibitionApp() {
                     <p className="text-4xl font-semibold leading-[1.05] tracking-tight text-dark sm:text-6xl">
                     THERE'S STILL
                     <br />
-                    SO MUCH MORE TO US.
+                    SO MUCH MORE TO US. 🌚
                     </p>
 
                     {/* Small universe line */}
                     <h2 className="mt-5 text-[10px] uppercase tracking-[0.32em] text-muted">
-                    OUR LITTLE UNIVERSE CONTINUES
+                    OUR LITTLE UNIVERSE CONTINUES 🌝
                     </h2>
 
                     {/* Signature */}
                     <div className="mt-8 text-xs uppercase tracking-[0.28em] text-muted">
-                    <p>♡</p>
-                    <p className="mt-3">SPOORTHY × NIRALI</p>
-                    <p className="mt-1">2023 — ∞</p>
+                    <p>🪐</p>
+                    <p className="mt-3">SPOORTHY × NIRALI 🌠</p>
+                    <p className="mt-1">2023 — ∞ ✨</p>
                     </div>
 
                 </div>
