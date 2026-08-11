@@ -16,12 +16,15 @@ const reveal = {
 };
 
 export function MuseumRoom({ room, onSelectExhibit }: MuseumRoomProps) {
+  const isFirstRoom = room.id === 1;
+
   return (
     <motion.section
       id={`room-${room.id}`}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      initial={isFirstRoom ? 'visible' : 'hidden'}
+      animate={isFirstRoom ? 'visible' : undefined}
+      whileInView={isFirstRoom ? undefined : 'visible'}
+      viewport={{ once: true, amount: 0.08 }}
       variants={reveal}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className="border-t border-muted/20 py-14 px-4 sm:px-6"
