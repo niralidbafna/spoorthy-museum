@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { ExhibitionMap } from '@/components/ExhibitionMap';
 import { FinalLetter } from '@/components/FinalLetter';
@@ -16,13 +16,30 @@ export default function ExhibitionApp() {
   const [selectedExhibit, setSelectedExhibit] = useState<Exhibit | null>(null);
 
   const totalRooms = rooms.length;
-  const currentRoom = useMemo(() => {
-    if (!entered) return 1;
-    const intersection = rooms.find((room) => {
-      const element = document.getElementById(`room-${room.id}`);
-      return (element?.getBoundingClientRect().top ?? 0) < window.innerHeight * 0.4;
-    });
-    return intersection?.id ?? 1;
+  const [currentRoom, setCurrentRoom] = useState(1);
+
+  useEffect(() => {
+    if (!entered) {
+      setCurrentRoom(1);
+      return;
+    }
+
+    const updateCurrentRoom = () => {
+      const intersection = [...rooms].reverse().find((room) => {
+        const element = document.getElementById(`room-${room.id}`);
+        return (element?.getBoundingClientRect().top ?? 0) < window.innerHeight * 0.4;
+      });
+      setCurrentRoom(intersection?.id ?? rooms[0].id);
+    };
+
+    updateCurrentRoom();
+    window.addEventListener('scroll', updateCurrentRoom, { passive: true });
+    window.addEventListener('resize', updateCurrentRoom);
+
+    return () => {
+      window.removeEventListener('scroll', updateCurrentRoom);
+      window.removeEventListener('resize', updateCurrentRoom);
+    };
   }, [entered]);
 
   return (
