@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Exhibit } from '@/src/data/museum';
 
@@ -33,8 +32,8 @@ export function ExhibitImage({
       aria-label={`Open memory ${exhibit.id}: ${exhibit.title}`}
     >
       {/* Header */}
-      <div className="px-4 py-4">
-        <p className="text-[9px] uppercase tracking-[0.28em] text-muted">
+      <div className="p-6">
+        <p className="text-[10px] uppercase tracking-[0.28em] text-gray-500">
           MEMORY {exhibit.id}
         </p>
 
@@ -52,13 +51,11 @@ export function ExhibitImage({
       {/* Image */}
       <div className="relative h-[320px] w-full overflow-hidden bg-[#161A22]">
         {exhibit.image ? (
-          <Image
+          <img
             src={exhibit.image}
             alt={exhibit.title}
-            fill
-            priority={priority}
-            sizes="(max-width: 640px) 100vw, 1200px"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading={priority ? 'eager' : 'lazy'}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center text-sm text-muted">

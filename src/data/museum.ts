@@ -74,6 +74,7 @@ export const rooms: Room[] = [
         room: 1,
         title: 'Seriously working 💻',
         video: '/images/beginning/v2.mp4',
+        poster: '/images/beginning/thumbnails/v2.jpg',
         caption: 'Haha, not really. ✧',
       },
       {
@@ -81,6 +82,7 @@ export const rooms: Room[] = [
         room: 1,
         title: 'Remember anything? 🌌',
         video: '/images/beginning/v3.mp4',
+        poster: '/images/beginning/thumbnails/v3.jpg',
         caption: 'The best days of our life. 💫',
       },
       {
@@ -88,6 +90,7 @@ export const rooms: Room[] = [
         room: 1,
         title: 'Lifetime videographer also 🎥',
         video: '/images/beginning/v5.mp4',
+        poster: '/images/beginning/thumbnails/v5.jpg',
         caption: 'Why are you shyyy? 🌚',
       },
     ],
@@ -227,6 +230,7 @@ export const rooms: Room[] = [
         room: 3,
         title: 'First Group Trip 🎥',
         video: '/images/adventures/v1.mp4',
+        poster: '/images/adventures/thumbnails/v1.jpg',
         caption: 'And hell lot of funnnnn!!! 🚀',
       },
       {
@@ -234,6 +238,7 @@ export const rooms: Room[] = [
         room: 3,
         title: 'The most scariest ride 🎢',
         video: '/images/adventures/v2.mp4',
+        poster: '/images/adventures/thumbnails/v2.jpg',
         caption: 'Adarsh has been on. (Overacting raja) 😂',
       },
     ],
@@ -303,6 +308,7 @@ export const rooms: Room[] = [
         room: 4,
         title: 'Most practised reel 🎬',
         video: '/images/fun-moments/v1.mp4',
+        poster: '/images/fun-moments/thumbnails/v1.jpg',
         caption: 'One crazy night! (Download and watch) 🌙',
       },
       {
@@ -310,6 +316,7 @@ export const rooms: Room[] = [
         room: 4,
         title: 'Goa Nights 🌴✨',
         video: '/images/fun-moments/v2.mp4',
+        poster: '/images/fun-moments/thumbnails/v2.jpg',
         caption: 'Music, madness, and one unforgettable night in Goa. 🌊🎶',
       },
     ],
@@ -401,6 +408,7 @@ export const rooms: Room[] = [
             room: 6,
             title: 'Badminton 🏸',
             video: '/images/games/v1.mp4',
+            poster: '/images/games/thumbnails/v1.jpg',
             caption: 'Smashes, rallies, and the kind of competition that makes everything more fun. ✨',
             },
             {
@@ -408,6 +416,7 @@ export const rooms: Room[] = [
             room: 6,
             title: 'Bowling 🎳',
             video: '/images/games/v2.mp4',
+            poster: '/images/games/thumbnails/v2.jpg',
             caption: 'A little luck, a lot of strikes, and way too much excitement! 🎳✨',
             },
             {
@@ -415,6 +424,7 @@ export const rooms: Room[] = [
             room: 6,
             title: 'Air Hockey 🏒',
             video: '/images/games/v3.mp4',
+            poster: '/images/games/thumbnails/v3.jpg',
             caption: 'Fast hands, fierce competition, and absolutely no mercy. 😌✨',
             },
             {
@@ -422,6 +432,7 @@ export const rooms: Room[] = [
             room: 6,
             title: 'Mafia 🕵️',
             video: '/images/games/v4.mp4',
+            poster: '/images/games/thumbnails/v4.jpg',
             caption: 'Bluffs, betrayals, suspicious looks, and absolutely no one to trust. 😈✨',
             },
         ],

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Exhibit } from '@/src/data/museum';
 
@@ -36,13 +35,10 @@ export function ExhibitVideo({ exhibit }: ExhibitVideoProps) {
           >
             {exhibit.poster ? (
               <div className="relative h-full w-full">
-                <Image
+                <img
                   src={exhibit.poster}
                   alt={exhibit.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 1200px"
-                  className="object-cover"
-                  priority={false}
+                  className="h-full w-full object-cover"
                 />
               </div>
             ) : (
