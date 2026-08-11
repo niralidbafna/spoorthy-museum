@@ -38,7 +38,12 @@ export function MuseumRoom({ room, onSelectExhibit }: MuseumRoomProps) {
           {room.exhibits.map((exhibit, index) => (
             <div key={exhibit.id} className="space-y-4">
               {exhibit.image ? (
-                <ExhibitImage exhibit={exhibit} onSelect={onSelectExhibit} layoutIndex={index} />
+                <ExhibitImage
+                  exhibit={exhibit}
+                  onSelect={onSelectExhibit}
+                  layoutIndex={index}
+                  priority={room.id === 1 && index === 0}
+                />
               ) : exhibit.video ? (
                 <ExhibitVideo exhibit={exhibit} />
               ) : (
