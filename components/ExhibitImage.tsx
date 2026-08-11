@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Exhibit } from '@/src/data/museum';
 
@@ -12,46 +11,60 @@ type ExhibitImageProps = {
   priority?: boolean;
 };
 
-const variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
-
-export function ExhibitImage({ exhibit, onSelect, layoutIndex, priority = false }: ExhibitImageProps) {
-  const imageSize = layoutIndex % 3 === 0 ? 'lg' : 'sm';
+export function ExhibitImage({
+  exhibit,
+  onSelect,
+  layoutIndex,
+  priority = false,
+}: ExhibitImageProps) {
   return (
     <motion.button
       type="button"
       onClick={() => onSelect(exhibit)}
-      initial="hidden"
-      animate="visible"
-      variants={variants}
-      transition={{ duration: 0.6, ease: 'easeOut', delay: Math.min(layoutIndex, 8) * 0.06 }}
-      className="group w-full text-left"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{
+        duration: 0.6,
+        ease: 'easeOut',
+        delay: Math.min(layoutIndex, 8) * 0.06,
+      }}
+      className="group w-full overflow-hidden border border-[#252932] bg-[#11141A] text-left"
       aria-label={`Open memory ${exhibit.id}: ${exhibit.title}`}
     >
-      <div className="relative overflow-hidden rounded-none border border-muted/15 bg-surface shadow-soft">
-        <div className="relative aspect-[4/3] bg-surface-2">
-          {exhibit.image ? (
-            <Image
-              src={exhibit.image}
-              alt={exhibit.title}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition duration-500 group-hover:scale-105"
-              priority={priority}
-            />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-muted">No image</div>
-          )}
-        </div>
+      {/* Header */}
+      <div className="px-4 py-4">
+        <p className="text-[9px] uppercase tracking-[0.28em] text-muted">
+          MEMORY {exhibit.id}
+        </p>
+
+        <h3 className="mt-2 text-lg font-semibold leading-tight text-white">
+          {exhibit.title}
+        </h3>
+
+        {exhibit.caption && (
+          <p className="mt-2 text-xs leading-5 text-gray-400">
+            {exhibit.caption}
+          </p>
+        )}
       </div>
-      <div className="mt-4 flex items-center justify-between gap-4">
-        <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-muted">Memory {exhibit.id}</p>
-          <p className="mt-2 text-lg font-semibold text-dark">{exhibit.title}</p>
-        </div>
-        <p className="text-sm text-muted max-w-[240px]">{exhibit.caption}</p>
+
+      {/* Image */}
+      <div className="relative h-[320px] w-full overflow-hidden bg-[#161A22]">
+        {exhibit.image ? (
+          <Image
+            src={exhibit.image}
+            alt={exhibit.title}
+            fill
+            priority={priority}
+            sizes="(max-width: 640px) 100vw, 1200px"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center text-sm text-muted">
+            No image
+          </div>
+        )}
       </div>
     </motion.button>
   );

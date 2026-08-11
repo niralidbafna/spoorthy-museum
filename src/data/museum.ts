@@ -305,6 +305,13 @@ export const rooms: Room[] = [
         video: '/images/fun-moments/v1.mp4',
         caption: 'One crazy night! (Download and watch) 🌙',
       },
+      {
+        id: '04-09',
+        room: 4,
+        title: 'Goa Nights 🌴✨',
+        video: '/images/fun-moments/v2.mp4',
+        caption: 'Music, madness, and one unforgettable night in Goa. 🌊🎶',
+      },
     ],
   },
 
@@ -359,40 +366,100 @@ export const rooms: Room[] = [
         caption: "With a smile, because it's coding! 💫",
       },
     ],
-  },
+   },
+   {
+        id: 6,
+        title: 'Games 🎲',
+        subtitle:
+            'The games, friendly competitions, and little moments where winning was never really the point. ✦',
+        summary:
+            'From strategy and mystery to sports and chaos, these are the games that became memories.',
+        exhibits: [
+            {
+            id: '06-01',
+            room: 6,
+            title: 'Cluedo 🕵️',
+            image: '/images/games/1.jpg',
+            caption: 'Suspicious looks, wild accusations, and absolutely no trust. 🔍',
+            },
+            {
+            id: '06-02',
+            room: 6,
+            title: 'Catan 🏝️',
+            image: '/images/games/2.jpg',
+            caption: 'Trading resources, making alliances, and definitely not being competitive. 🎲',
+            },
+            {
+            id: '06-03',
+            room: 6,
+            title: 'Strike 🎳',
+            image: '/images/games/3.jpg',
+            caption: 'A little competition never hurt anyone. Until someone took it way too seriously. 😌',
+            },
+            {
+            id: '06-04',
+            room: 6,
+            title: 'Badminton 🏸',
+            video: '/images/games/v1.mp4',
+            caption: 'Smashes, rallies, and the kind of competition that makes everything more fun. ✨',
+            },
+            {
+            id: '06-05',
+            room: 6,
+            title: 'Bowling 🎳',
+            video: '/images/games/v2.mp4',
+            caption: 'A little luck, a lot of strikes, and way too much excitement! 🎳✨',
+            },
+            {
+            id: '06-06',
+            room: 6,
+            title: 'Air Hockey 🏒',
+            video: '/images/games/v3.mp4',
+            caption: 'Fast hands, fierce competition, and absolutely no mercy. 😌✨',
+            },
+            {
+            id: '06-07',
+            room: 6,
+            title: 'Mafia 🕵️',
+            video: '/images/games/v4.mp4',
+            caption: 'Bluffs, betrayals, suspicious looks, and absolutely no one to trust. 😈✨',
+            },
+        ],
+    },
 
-  {
-    id: 6,
-    title: 'A Letter to Spoorthy 🌙',
-    subtitle: 'The emotional ending. ♡',
-    summary:
-      'A quiet final chapter where words become the most meaningful memory of all.',
-    exhibits: [
-      {
-        id: '06-01',
-        room: 6,
-        title: 'The Letter 💌',
-        description:
-          `Dear Spoorthy,\n
+    {
+            id: 7,
+            title: 'A Letter to Spoorthy 🌙',
+            subtitle: 'The emotional ending. ♡',
+            summary:
+            'A quiet final chapter where words become the most meaningful memory of all.',
+            exhibits: [
+            {
+                id: '07-01',
+                room: 7,
+                title: 'The Letter 💌',
+                description:
+                `Dear Spoorthy,\n
 
-Three years ago, I met you at Mercedes. I had no idea that an ordinary first day at a company would quietly become the beginning of one of the most beautiful friendships of my life.
+        Three years ago, I met you at Mercedes. I had no idea that an ordinary first day at a company would quietly become the beginning of one of the most beautiful friendships of my life.
 
-Somewhere between the conversations, the laughter, the random little moments, and the countless memories we made, you became a part of my universe. A tiny constellation of moments that somehow makes sense when I look at them together - all the silly ones, the quiet ones, and the ones I wish I could relive forever.
+        Somewhere between the conversations, the laughter, the random little moments, and the countless memories we made, you became a part of my universe. A tiny constellation of moments that somehow makes sense when I look at them together - all the silly ones, the quiet ones, and the ones I wish I could relive forever.
 
-We have shared laughter, quiet moments, chaos, comfort, and memories that feel like a little universe made just for us. You became someone I trust, admire, and love in a way I never expected when we first met.
+        We have shared laughter, quiet moments, chaos, comfort, and memories that feel like a little universe made just for us. You became someone I trust, admire, and love in a way I never expected when we first met.
 
-Thank you for being you. For every conversation, every late-night message, every laugh, every little adventure, and every ordinary moment that somehow became extraordinary just because it was ours.
+        Thank you for being you. For every conversation, every late-night message, every laugh, every little adventure, and every ordinary moment that somehow became extraordinary just because it was ours.
 
-If our friendship were a universe, I think I'd never want to stop exploring it, because somehow, there always seems to be another memory waiting to be made, another story waiting to unfold, another little star waiting to find its place.
+        If our friendship were a universe, I think I'd never want to stop exploring it, because somehow, there always seems to be another memory waiting to be made, another story waiting to unfold, another little star waiting to find its place.
 
-So here's to everything we've been, everything we are, and everything that's still waiting for us somewhere among the stars.
+        So here's to everything we've been, everything we are, and everything that's still waiting for us somewhere among the stars.
 
-Some friendships are found.
+        Some friendships are found.
 
-Ours feels a little more like it was written in the stars. ✨
+        Ours feels a little more like it was written in the stars. ✨
 
-Love,
-Nirali`,
+        Love,
+        Nirali`,
+    
       },
     ],
   },
