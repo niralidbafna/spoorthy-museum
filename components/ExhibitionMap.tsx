@@ -6,7 +6,7 @@ export function ExhibitionMap() {
   return (
     <section className="border-t border-muted/20 pt-10 pb-12">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <p className="text-xs uppercase tracking-[0.32em] text-muted mb-6">Universe Map</p>
+        <p className="text-xs uppercase tracking-[0.32em] text-muted mb-6">Universe Map 🗺️</p>
         <div className="grid gap-4 sm:grid-cols-2">
           {rooms.map((room) => (
             <a

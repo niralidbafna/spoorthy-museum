@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { ExhibitionMap } from '@/components/ExhibitionMap';
 import { FinalLetter } from '@/components/FinalLetter';
 import { ImageLightbox } from '@/components/ImageLightbox';
@@ -10,11 +9,147 @@ import { MuseumEntrance } from '@/components/MuseumEntrance';
 import { MuseumProgress } from '@/components/MuseumProgress';
 import { MuseumRoom } from '@/components/MuseumRoom';
 import { rooms, Exhibit } from '@/src/data/museum';
+import Lottie from 'lottie-react';
+import astr2 from '@/public/animations/astr2.json';
+import monkey from '@/public/animations/monkey.json';
+import tel from '@/public/animations/tel.json';
+import rocket from '@/public/animations/rocket.json';
+import mug from '@/public/animations/mug.json';
+import astronaut from '@/public/animations/astronaut.json';
+import star from '@/public/animations/star.json';
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
+function IntroAnimation() {
+  return (
+    <motion.div
+      className="pointer-events-none fixed right-[-20px] top-[25%] z-50 flex items-center justify-center"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 1.2 }}
+      transition={{
+        duration: 1,
+        ease: 'easeOut',
+      }}
+    >
+      <div className="h-32 w-32">
+        <Lottie
+          animationData={astronaut}
+          loop
+          autoplay
+        />
+      </div>
+    </motion.div>
+  );
+}
+function AstronautAnimation() {
+  return (
+    <motion.div
+      className="pointer-events-none fixed right-[-20px] top-[25%] z-50 h-36 w-36"
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -150, opacity: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: 'easeOut',
+      }}
+    >
+      <Lottie
+        animationData={astr2}
+        loop
+        autoplay
+      />
+    </motion.div>
+  );
+}
+function MonkeyAnimation() {
+  return (
+    <motion.div
+      className="pointer-events-none fixed left-[-20px] top-[35%] z-50 h-36 w-36"
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 150, opacity: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: 'easeOut',
+      }}
+    >
+      <Lottie
+        animationData={monkey}
+        loop
+        autoplay
+      />
+    </motion.div>
+  );
+}
+function TelAnimation() {
+  return (
+    <motion.div
+      className="pointer-events-none fixed right-[-20px] top-[30%] z-50 h-36 w-36"
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -150, opacity: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: 'easeOut',
+      }}
+    >
+      <Lottie
+        animationData={tel}
+        loop
+        autoplay
+      />
+    </motion.div>
+  );
+}
+function RocketAnimation() {
+  return (
+    <motion.div
+      className="pointer-events-none fixed left-[-20px] top-[25%] z-50 h-36 w-36"
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 150, opacity: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: 'easeOut',
+      }}
+    >
+      <Lottie
+        animationData={rocket}
+        loop
+        autoplay
+      />
+    </motion.div>
+  );
+}
+function MugAnimation() {
+  return (
+    <motion.div
+      className="pointer-events-none fixed right-[-20px] top-[35%] z-50 h-36 w-36"
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -150, opacity: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: 'easeOut',
+      }}
+    >
+      <Lottie
+        animationData={mug}
+        loop
+        autoplay
+      />
+    </motion.div>
+  );
+}
 
 export default function ExhibitionApp() {
   const [entered, setEntered] = useState(false);
   const [selectedExhibit, setSelectedExhibit] = useState<Exhibit | null>(null);
-
+  const [showIntroAnimation, setShowIntroAnimation] = useState(true);
   const totalRooms = rooms.length;
   const [currentRoom, setCurrentRoom] = useState(1);
 
@@ -25,6 +160,9 @@ export default function ExhibitionApp() {
     }
 
     const updateCurrentRoom = () => {
+        if (window.scrollY > 100) {
+            setShowIntroAnimation(false);
+        }
       const intersection = [...rooms].reverse().find((room) => {
         const element = document.getElementById(`room-${room.id}`);
         return (element?.getBoundingClientRect().top ?? 0) < window.innerHeight * 0.4;
@@ -39,12 +177,14 @@ export default function ExhibitionApp() {
     return () => {
       window.removeEventListener('scroll', updateCurrentRoom);
       window.removeEventListener('resize', updateCurrentRoom);
+
     };
   }, [entered]);
 
   return (
+    
     <main className="min-h-screen bg-background text-dark">
-      <AnimatePresence>{!entered && <MuseumEntrance onEnter={() => setEntered(true)} />}</AnimatePresence>
+      <AnimatePresence>{!entered && <MuseumEntrance onEnter={() => {setEntered(true); setShowIntroAnimation(true);}} />}</AnimatePresence>
       {entered ? (
         <div className="relative">
           <MusicPlayer />
@@ -88,6 +228,34 @@ export default function ExhibitionApp() {
                 </div>
 
             </div>
+            <AnimatePresence mode="wait">
+            {showIntroAnimation ? (
+                <IntroAnimation key="astronaut" />
+            ) : (
+            <>
+                {currentRoom === 1 && (
+                    <AstronautAnimation key="astr2" />
+                )}
+
+                {currentRoom === 2 && (
+                    <MonkeyAnimation key="monkey" />
+                )}
+
+                {currentRoom === 3 && (
+                    <TelAnimation key="tel" />
+                )}
+
+                {currentRoom === 4 && (
+                    <RocketAnimation key="rocket" />
+                )}
+
+                {currentRoom === 5 && (
+                    <MugAnimation key="mug" />
+                )}
+                </>
+            )}
+                </AnimatePresence>
+
             <ExhibitionMap />
             <MuseumProgress current={currentRoom} total={totalRooms} />
             <section className="mt-12 space-y-24">
@@ -95,27 +263,53 @@ export default function ExhibitionApp() {
                 <MuseumRoom key={room.id} room={room} onSelectExhibit={setSelectedExhibit} />
               ))}
             </section>
-            <section className="border-t border-muted/20 py-14 px-4 sm:px-0">
+            <section className="border-t border-muted/20 py-20 px-4 sm:px-0">
                 <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
-                    {/* Main closing statement */}
                     <p className="text-4xl font-semibold leading-[1.05] tracking-tight text-dark sm:text-6xl">
                     THERE'S STILL
                     <br />
                     SO MUCH MORE TO US. 🌚
                     </p>
 
-                    {/* Small universe line */}
                     <h2 className="mt-5 text-[10px] uppercase tracking-[0.32em] text-muted">
                     OUR LITTLE UNIVERSE CONTINUES 🌝
                     </h2>
 
-                    {/* Signature */}
                     <div className="mt-8 text-xs uppercase tracking-[0.28em] text-muted">
                     <p>🪐</p>
                     <p className="mt-3">SPOORTHY × NIRALI 🌠</p>
                     <p className="mt-1">2023 — ∞ ✨</p>
                     </div>
+
+                    {/* Final star */}
+                    <motion.div
+                    className="mx-auto mt-16 h-52 w-52"
+                    initial={{
+                        opacity: 0,
+                        scale: 0.5,
+                        rotate: -10,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        rotate: 0,
+                    }}
+                    viewport={{
+                        once: true,
+                        amount: 0.5,
+                    }}
+                    transition={{
+                        duration: 1.2,
+                        ease: 'easeOut',
+                    }}
+                    >
+                    <Lottie
+                        animationData={star}
+                        loop
+                        autoplay
+                    />
+                    </motion.div>
 
                 </div>
                 </section>
