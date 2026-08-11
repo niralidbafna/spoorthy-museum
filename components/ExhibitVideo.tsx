@@ -18,7 +18,7 @@ export function ExhibitVideo({ exhibit }: ExhibitVideoProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="rounded-none border border-muted/15 bg-white shadow-soft"
+      className="rounded-none border border-muted/15 bg-surface shadow-soft"
     >
       <div className="p-5">
         <p className="text-xs uppercase tracking-[0.32em] text-muted">Memory {exhibit.id}</p>
@@ -26,7 +26,7 @@ export function ExhibitVideo({ exhibit }: ExhibitVideoProps) {
         <p className="mt-3 text-sm text-muted">{exhibit.caption}</p>
       </div>
 
-      <div className="relative overflow-hidden border-t border-muted/10 bg-black/95">
+      <div className="relative overflow-hidden border-t border-muted/10 bg-surface-2/95">
         {!showPlayer ? (
           <button
             type="button"
@@ -46,19 +46,19 @@ export function ExhibitVideo({ exhibit }: ExhibitVideoProps) {
                 />
               </div>
             ) : (
-              <div className="flex h-full w-full items-center justify-center bg-black text-white">Video</div>
+              <div className="flex h-full w-full items-center justify-center bg-surface-2 text-muted">Video</div>
             )}
 
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className="rounded-full bg-white/90 p-3 shadow-soft">
+              <div className="rounded-full bg-surface/90 p-3 shadow-soft text-dark">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 5v14l11-7L8 5z" fill="#151515" />
+                  <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
                 </svg>
               </div>
             </div>
           </button>
         ) : (
-          <div className="block w-full h-[320px] sm:h-[420px] bg-black">
+          <div className="block w-full h-[320px] sm:h-[420px] bg-surface-2">
             <video
               key={exhibit.id}
               src={exhibit.video}

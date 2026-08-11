@@ -50,7 +50,7 @@ export function MuseumRoom({ room, onSelectExhibit }: MuseumRoomProps) {
               ) : exhibit.video ? (
                 <ExhibitVideo exhibit={exhibit} />
               ) : (
-                <div className="rounded-none border border-muted/20 bg-white/80 p-6 text-sm text-muted">
+                <div className="rounded-none border border-muted/20 bg-surface/80 p-6 text-sm text-muted">
                   {exhibit.description}
                 </div>
               )}

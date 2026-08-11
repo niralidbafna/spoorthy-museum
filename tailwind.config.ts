@@ -5,12 +5,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#F5F1E8',
-        surface: '#FFFFFF',
-        text: '#242424',
-        dark: '#151515',
-        muted: '#77736B',
-        accent: '#A8894A',
+        // Dark "Our Little Universe" theme tokens
+        background: '#090B10', // page background
+        surface: '#11141B', // primary card/surface
+        'surface-2': '#161A22', // secondary surface
+        text: '#F3F0E8', // primary text (warm ivory)
+        dark: '#F3F0E8', // used by existing `text-dark` classes
+        'text-secondary': '#A0A3AC', // secondary text
+        muted: '#70747F', // muted text
+        border: 'rgba(255,255,255,0.12)',
+        accent: '#F3EDE1', // warm champagne accent
+        hover: '#171B24',
       },
       boxShadow: {
         soft: '0 24px 80px rgba(21, 21, 21, 0.06)',

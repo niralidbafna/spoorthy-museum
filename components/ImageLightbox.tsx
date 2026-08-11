@@ -28,7 +28,7 @@ export function ImageLightbox({ exhibit, onClose }: ImageLightboxProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 p-4"
           onClick={onClose}
         >
           <motion.div
@@ -42,12 +42,12 @@ export function ImageLightbox({ exhibit, onClose }: ImageLightboxProps) {
             <button
               type="button"
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 inline-flex items-center justify-center rounded-none border border-white/20 bg-black/60 px-4 py-2 text-sm text-white backdrop-blur-sm transition hover:bg-black"
+              className="absolute top-4 right-4 z-10 inline-flex items-center justify-center rounded-none border border-border/20 bg-surface-2/60 px-4 py-2 text-sm text-dark backdrop-blur-sm transition hover:bg-surface-2"
               aria-label="Close image lightbox"
             >
               Close
             </button>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-none border border-white/10 bg-black">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-none border border-border/10 bg-surface-2">
               <Image
                 src={exhibit.image}
                 alt={exhibit.title}
@@ -56,7 +56,7 @@ export function ImageLightbox({ exhibit, onClose }: ImageLightboxProps) {
                 className="object-contain"
               />
             </div>
-            <div className="mt-6 rounded-none border border-white/10 bg-white/95 p-6 text-left text-sm text-dark">
+            <div className="mt-6 rounded-none border border-border/10 bg-surface/95 p-6 text-left text-sm text-dark">
               <p className="text-xs uppercase tracking-[0.3em] text-muted">Memory {exhibit.id}</p>
               <h3 className="mt-2 text-2xl font-semibold text-dark">{exhibit.title}</h3>
               <p className="mt-4 text-base leading-8 text-muted">{exhibit.caption}</p>

@@ -12,7 +12,7 @@ export function ExhibitionMap() {
             <a
               key={room.id}
               href={`#room-${room.id}`}
-              className="group block rounded-none border border-muted/15 bg-white/80 p-5 transition hover:border-accent/40"
+              className="group block rounded-none border border-muted/15 bg-surface/80 p-5 transition hover:border-accent/40"
             >
               <span className="text-sm text-muted">{String(room.id).padStart(2, '0')}</span>
               <h3 className="mt-2 text-lg font-semibold text-dark">{room.title}</h3>

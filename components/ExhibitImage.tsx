@@ -30,8 +30,8 @@ export function ExhibitImage({ exhibit, onSelect, layoutIndex, priority = false 
       className="group w-full text-left"
       aria-label={`Open memory ${exhibit.id}: ${exhibit.title}`}
     >
-      <div className="relative overflow-hidden rounded-none border border-muted/15 bg-white shadow-soft">
-        <div className="relative aspect-[4/3] bg-[#f3efe8]">
+      <div className="relative overflow-hidden rounded-none border border-muted/15 bg-surface shadow-soft">
+        <div className="relative aspect-[4/3] bg-surface-2">
           {exhibit.image ? (
             <Image
               src={exhibit.image}

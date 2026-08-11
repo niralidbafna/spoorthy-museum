@@ -30,12 +30,12 @@ export function MusicPlayer() {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-30 flex items-center gap-3 rounded-none border border-muted/25 bg-white/90 px-4 py-3 text-sm text-dark shadow-soft backdrop-blur-sm sm:bottom-6 sm:right-6">
+    <div className="fixed bottom-5 right-5 z-30 flex items-center gap-3 rounded-none border border-muted/25 bg-surface/90 px-4 py-3 text-sm text-dark shadow-soft backdrop-blur-sm sm:bottom-6 sm:right-6">
       <button
         type="button"
         onClick={togglePlayback}
         aria-label={buttonLabel}
-        className="inline-flex h-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-none border border-muted/20 bg-background text-dark transition hover:bg-accent/10 focus:outline-offset-4 focus:outline-2 focus:outline-dark"
+        className="inline-flex h-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-none border border-muted/20 bg-surface-2 text-dark transition hover:bg-accent/10 focus:outline-offset-4 focus:outline-2 focus:outline-dark"
       >
         {isPlaying ? 'Pause' : 'Play'}
       </button>
