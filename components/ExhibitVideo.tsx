@@ -21,7 +21,7 @@ export function ExhibitVideo({ exhibit }: ExhibitVideoProps) {
       className="rounded-none border border-muted/15 bg-white shadow-soft"
     >
       <div className="p-5">
-        <p className="text-xs uppercase tracking-[0.32em] text-muted">Exhibit {exhibit.id}</p>
+        <p className="text-xs uppercase tracking-[0.32em] text-muted">Memory {exhibit.id}</p>
         <h3 className="mt-3 text-2xl font-semibold text-dark">{exhibit.title}</h3>
         <p className="mt-3 text-sm text-muted">{exhibit.caption}</p>
       </div>
@@ -32,7 +32,7 @@ export function ExhibitVideo({ exhibit }: ExhibitVideoProps) {
             type="button"
             onClick={() => setShowPlayer(true)}
             className="relative block w-full h-[320px] sm:h-[420px] text-left"
-            aria-label={`Play video ${exhibit.title}`}
+            aria-label={`Play memory ${exhibit.title}`}
           >
             {exhibit.poster ? (
               <div className="relative h-full w-full">

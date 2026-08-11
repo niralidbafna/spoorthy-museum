@@ -48,28 +48,45 @@ export default function ExhibitionApp() {
       {entered ? (
         <div className="relative">
           <MusicPlayer />
-          <div className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6">
-            <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-              <div className="max-w-2xl">
-                <p className="text-xs uppercase tracking-[0.32em] text-muted">THE MUSEUM OF US</p>
-                <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">SPOORTHY × NIRALI</h1>
-                <p className="mt-4 max-w-xl text-base leading-8 text-muted">A private exhibition of three years of memories, laughter, and friendship.</p>
-              </div>
-              <div className="flex flex-col items-start gap-4 sm:items-end">
+          <div className="mx-auto max-w-6xl px-4 pb-24 pt-6 sm:px-6">
+
+            {/* Return to universe */}
+            <div className="mb-10">
                 <button
-                  type="button"
-                  onClick={() => {
+                type="button"
+                onClick={() => {
                     setSelectedExhibit(null);
                     setEntered(false);
-                  }}
-                  className="inline-flex items-center justify-center rounded-none border border-dark px-5 py-3 text-sm uppercase tracking-[0.24em] text-dark transition duration-200 hover:bg-dark hover:text-background focus:outline-offset-4 focus:outline-2 focus:outline-dark"
-                >
-                  RETURN TO ENTRANCE
+                }}
+                className="group inline-flex items-center gap-3 rounded-md border border-dark/25 bg-background/70 px-4 py-2.5 text-[10px] uppercase tracking-[0.28em] text-dark shadow-sm transition-all duration-200 hover:border-dark/40 hover:bg-background hover:text-dark focus:outline-none focus:ring-1 focus:ring-dark/20"                >
+                <span className="text-sm transition-transform duration-200 group-hover:-translate-x-1">
+                    ←
+                </span>
+                <span>Return to our universe</span>
                 </button>
+            </div>
+
+            {/* Header */}
+            <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+                
                 <div className="hidden sm:block">
-                  <MuseumProgress current={currentRoom} total={totalRooms} />
+                <MuseumProgress current={currentRoom} total={totalRooms} />
                 </div>
-              </div>
+
+                <div className="max-w-2xl">
+                <p className="text-xs uppercase tracking-[0.32em] text-muted">
+                    OUR LITTLE UNIVERSE
+                </p>
+
+                <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
+                    SPOORTHY × NIRALI
+                </h1>
+
+                <p className="mt-4 max-w-xl text-base leading-8 text-muted">
+                    A private memory universe of three years of memories, laughter, and friendship.
+                </p>
+                </div>
+
             </div>
             <ExhibitionMap />
             <MuseumProgress current={currentRoom} total={totalRooms} />
@@ -79,18 +96,29 @@ export default function ExhibitionApp() {
               ))}
             </section>
             <section className="border-t border-muted/20 py-14 px-4 sm:px-0">
-              <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.32em] text-muted">THE EXHIBITION IS OVER</p>
-                  <h2 className="mt-4 text-3xl font-semibold leading-tight text-dark sm:text-4xl">BUT THE STORY ISN'T.</h2>
+                <div className="mx-auto max-w-6xl px-4 sm:px-6">
+
+                    {/* Main closing statement */}
+                    <p className="text-4xl font-semibold leading-[1.05] tracking-tight text-dark sm:text-6xl">
+                    THERE'S STILL
+                    <br />
+                    SO MUCH MORE TO US.
+                    </p>
+
+                    {/* Small universe line */}
+                    <h2 className="mt-5 text-[10px] uppercase tracking-[0.32em] text-muted">
+                    OUR LITTLE UNIVERSE CONTINUES
+                    </h2>
+
+                    {/* Signature */}
+                    <div className="mt-8 text-xs uppercase tracking-[0.28em] text-muted">
+                    <p>♡</p>
+                    <p className="mt-3">SPOORTHY × NIRALI</p>
+                    <p className="mt-1">2023 — ∞</p>
+                    </div>
+
                 </div>
-                <div className="text-right text-sm uppercase tracking-[0.28em] text-muted">
-                  <p>♡</p>
-                  <p className="mt-3">SPOORTHY × NIRALI</p>
-                  <p className="mt-1">2023 — ∞</p>
-                </div>
-              </div>
-            </section>
+                </section>
           </div>
           <ImageLightbox exhibit={selectedExhibit} onClose={() => setSelectedExhibit(null)} />
         </div>

@@ -31,7 +31,7 @@ export function MuseumRoom({ room, onSelectExhibit }: MuseumRoomProps) {
     >
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 max-w-2xl">
-          <p className="text-sm uppercase tracking-[0.28em] text-muted mb-3">ROOM {String(room.id).padStart(2, '0')}</p>
+          <p className="text-sm uppercase tracking-[0.28em] text-muted mb-3">CHAPTER {String(room.id).padStart(2, '0')}</p>
           <h2 className="text-3xl font-semibold leading-tight text-dark sm:text-4xl">{room.title}</h2>
           <p className="mt-4 max-w-xl text-base leading-8 text-muted">{room.subtitle}</p>
           <p className="mt-6 text-sm leading-7 text-muted">{room.summary}</p>

@@ -57,7 +57,7 @@ export function ImageLightbox({ exhibit, onClose }: ImageLightboxProps) {
               />
             </div>
             <div className="mt-6 rounded-none border border-white/10 bg-white/95 p-6 text-left text-sm text-dark">
-              <p className="text-xs uppercase tracking-[0.3em] text-muted">Exhibit {exhibit.id}</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-muted">Memory {exhibit.id}</p>
               <h3 className="mt-2 text-2xl font-semibold text-dark">{exhibit.title}</h3>
               <p className="mt-4 text-base leading-8 text-muted">{exhibit.caption}</p>
             </div>

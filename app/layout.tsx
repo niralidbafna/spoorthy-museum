@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'THE MUSEUM OF US',
-  description: 'A private exhibition of friendship and memories.',
+  title: 'OUR LITTLE UNIVERSE',
+  description: 'A private memory universe of friendship and moments.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -28,7 +28,7 @@ export function ExhibitImage({ exhibit, onSelect, layoutIndex, priority = false 
       variants={variants}
       transition={{ duration: 0.6, ease: 'easeOut', delay: Math.min(layoutIndex, 8) * 0.06 }}
       className="group w-full text-left"
-      aria-label={`Open exhibit ${exhibit.id}: ${exhibit.title}`}
+      aria-label={`Open memory ${exhibit.id}: ${exhibit.title}`}
     >
       <div className="relative overflow-hidden rounded-none border border-muted/15 bg-white shadow-soft">
         <div className="relative aspect-[4/3] bg-[#f3efe8]">
@@ -48,7 +48,7 @@ export function ExhibitImage({ exhibit, onSelect, layoutIndex, priority = false 
       </div>
       <div className="mt-4 flex items-center justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-muted">Exhibit {exhibit.id}</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted">Memory {exhibit.id}</p>
           <p className="mt-2 text-lg font-semibold text-dark">{exhibit.title}</p>
         </div>
         <p className="text-sm text-muted max-w-[240px]">{exhibit.caption}</p>

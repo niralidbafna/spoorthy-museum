@@ -194,14 +194,14 @@ export const rooms: Room[] = [
         caption: 'See you at the track.',
       },
       {
-        id: '03-05',
+        id: '03-04',
         room: 3,
         title: 'Swim?',
         image: '/images/adventures/4.jpg',
         caption: 'See you at an island!!!',
       },
       {
-        id: '03-06',
+        id: '03-05',
         room: 3,
         title: 'Kayak?',
         image: '/images/adventures/5.jpg',
@@ -242,7 +242,7 @@ export const rooms: Room[] = [
     title: 'Fun Moments',
     subtitle: 'Ridiculous memories, inside jokes, and the things that make us laugh.',
     summary:
-      'A room of moments that belong only to our friendship and our fun language.',
+      'A chapter of moments that belong only to our friendship and our fun language.',
     exhibits: [
       {
         id: '04-01',
@@ -358,14 +358,14 @@ export const rooms: Room[] = [
     title: 'A Letter to Spoorthy',
     subtitle: 'The emotional ending.',
     summary:
-      'A quiet final room where words become the most meaningful exhibit of all.',
+      'A quiet final chapter where words become the most meaningful memory of all.',
     exhibits: [
       {
         id: '06-01',
         room: 6,
         title: 'The Letter',
         description:
-          'Dear Spoorthy,\n\nThree years ago I met you at Mercedes. I had no idea that an ordinary first day at a company would become the beginning of one of the most beautiful friendships of my life.\n\nWe have shared laughter, quiet moments, and memories that feel like a private exhibition made only for us. You have become someone I trust, admire, and love as a friend more than I ever expected.\n\nThank you for being you, for every conversation, every late-night message, and every moment we turned into a memory. This is for the quiet way you make the world feel warmer and more meaningful.\n\nLove,\nNirali',
+          'Dear Spoorthy,\n\nThree years ago I met you at Mercedes. I had no idea that an ordinary first day at a company would become the beginning of one of the most beautiful friendships of my life.\n\nWe have shared laughter, quiet moments, and memories that feel like a private memory universe made only for us. You have become someone I trust, admire, and love as a friend more than I ever expected.\n\nThank you for being you, for every conversation, every late-night message, and every moment we turned into a memory. This is for the quiet way you make the world feel warmer and more meaningful.\n\nLove,\nNirali',
       },
     ],
   },
